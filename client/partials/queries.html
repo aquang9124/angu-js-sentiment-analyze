@@ -1,0 +1,28 @@
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+		<h2 class="text-center" id="spc-heading" ng-click="swapHeading()">{{ heading.message }}</h2>
+		<hr>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-12">
+		<p class="text-center lg-pa">Instructions:</p>
+		<div id="directions" ng-bind-html="instructions"></div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-12">
+		<div class="wrapper">
+			<p class="text-center lg-pa">Analyze Sentence:</p>
+			<form>
+				<div class="form-group">
+					<label>Sentence:</label>
+					<input type="text" ng-model="newSentence" class="form-control">
+				</div>
+				<div class="form-group">
+					<button class="btn btn-primary" ng-click="analyzeText()">Analyze</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
