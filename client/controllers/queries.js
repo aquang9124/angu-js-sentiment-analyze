@@ -1,4 +1,4 @@
-myApp.controller('queriesController', function($scope, $location, $document, $interval, locationService) {
+myApp.controller('queriesController', function($scope, $location, $document, $interval, locationService, sentiService) {
 	locationService.currentUrl = $location.url();
 
 	$scope.heading = { message: "Sentiment Analysis", num: 1 };
@@ -37,6 +37,10 @@ myApp.controller('queriesController', function($scope, $location, $document, $in
 			$scope.heading.num = 1;
 			$scope.heading.message = "Sentiment Analysis";
 		}
+	};
+
+	$scope.analyzeText = function() {
+		sentiService.getAnalysis($scope.newSentence);
 	};
 
 	// Interval for updateText

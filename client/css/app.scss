@@ -30,9 +30,9 @@ $sm-font: 2em;
 }
 
 @mixin black-gd-txt() {
-	background: -webkit-linear-gradient(#eee, #333);
-	background: -moz-linear-gradient(#eee, #333);
-	background: linear-gradient(#eee, #333);
+	background: -webkit-linear-gradient(#bfbfbf, #333);
+	background: -moz-linear-gradient(#bfbfbf, #333);
+	background: linear-gradient(#bfbfbf, #333);
 	-webkit-background-clip: text;
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
@@ -107,8 +107,8 @@ h1, h2, h3, h4, h5, h6 {
 .container {
 	@include container-perim();
 	background-color: white;
-	opacity: 0.6;
-	filter: alpha(opacity=60); /* For IE8 and earlier */
+	opacity: 0.8;
+	filter: alpha(opacity=80); /* For IE8 and earlier */
 	height: 100%;
 }
 
@@ -118,7 +118,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .wrapper {
 	margin: 5em auto;
-	width: $large;
+	width: $x-large;
 	height: $large;
 }
 
@@ -145,12 +145,14 @@ h1, h2, h3, h4, h5, h6 {
 #directions {
 	margin: 0 auto;
 	color: white;
+	text-shadow: 0 -.1em .2em black;
 	padding: $md-font 0 0 0;
 	text-align: center;
 	width: $x-large;
 	height: $x-small;
-	border: 2px solid black;
-	background-color: lighten(black, 10%);
+	border: 1px solid black;
+	background-color: lighten(black, 40%);
+	border-radius: 5px;
 }
 
 #spc-heading {
