@@ -25,16 +25,15 @@ myApp.service('sentiService', function($resource) {
 
 	this.getAnalysis = function(text) {
 		var sentimentAPI = $resource('https://twinword-sentiment-analysis.p.mashape.com/analyze/', {}, { 
-			'get': { 
-				method: 'GET', 
+			find: { 
+				method: 'GET',
+				isArray: false,
 				headers: { 
-					'X-Mashape-Key': 'bDPDcJeR9BmshPk8xl2oUBZ4mM14p1xzufRjsnWu3DBQ4E9fq0', 
-					'Content-Type': "application/x-www-form-urlencoded", 
-					'Accept': "application/json" 
+					"x-mashape-authorization": 'bDPDcJeR9BmshPk8xl2oUBZ4mM14p1xzufRjsnWu3DBQ4E9fq0',
 				}
 			}
 		});
-		return analysisResult = sentimentAPI.get({ text: text });
+		return analysisResult = sentimentAPI.find({ text: text });
 	}
 });
 

@@ -2,6 +2,11 @@ myApp.controller('queriesController', function($scope, $location, $document, $in
 	locationService.currentUrl = $location.url();
 
 	$scope.heading = { message: "Sentiment Analysis", num: 1 };
+	$scope.text = sentiService.text;
+
+	$scope.$watch('text', function() {
+		sentiService.text = $scope.text;
+	});
 
 	// Code for the instructions to show
 	$scope.directions = ["Please type in a sentence.", "After analysis, you will receive your sentiment results.", "You will be able to see how negative/positive your statement is.", "Give it a try. :)"];
@@ -39,8 +44,8 @@ myApp.controller('queriesController', function($scope, $location, $document, $in
 		}
 	};
 
-	$scope.analyzeText = function() {
-		sentiService.getAnalysis($scope.newSentence);
+	$scope.submit = function() {
+		$location.path('/results');
 	};
 
 	// Interval for updateText
