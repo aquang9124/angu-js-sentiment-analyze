@@ -3,12 +3,7 @@ html, body {
   width: 100%; }
 
 body {
-  padding-top: 100px;
-  background: url("../img/coffee.jpg") center center no-repeat fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover; }
+  padding-top: 3.925em; }
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 1.2em;
@@ -45,14 +40,8 @@ h1, h2, h3, h4, h5, h6 {
   background: -ms-linear-gradient(top, #4CAF50 0%, #1f3b08 100%);
   background: linear-gradient(top, #4CAF50 0%, #1f3b08 100%); }
 
-.container {
-  -webkit-box-shadow: 0px 0px 5px 8px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 0px 5px 8px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 0px 5px 8px rgba(0, 0, 0, 0.75);
-  background-color: white;
-  opacity: 0.8;
-  filter: alpha(opacity=80);
-  /* For IE8 and earlier */
+.container-fluid {
+  background-color: #262626;
   height: 100%; }
 
 .lg-pa {
@@ -63,19 +52,18 @@ h1, h2, h3, h4, h5, h6 {
   width: 40em;
   height: 30em; }
 
-.angular-google-map-container {
-  height: 300px; }
-
-.angular-google-map {
-  height: 300px; }
+.view-box {
+  height: 100%;
+  width: 100%; }
 
 #navi-bar {
-  border: 2px solid black;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  background-color: #333333;
   top: 0;
   left: 0;
   right: 0;
   z-index: 9999;
-  background-image: url("http://api.thumbr.it/whitenoise-361x370.png?background=1f1b1fff&noise=626262&density=64&opacity=15");
   width: 100% !important;
   height: 4em;
   padding: 0 4em 0 4em;
@@ -109,8 +97,11 @@ h1, h2, h3, h4, h5, h6 {
   cursor: pointer; }
 
 #map_canvas {
-  height: 40em;
-  margin-top: 10em; }
+  min-height: 200px;
+  min-width: 200px;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto; }
 
 @media only screen and (max-width: 550px) {
   #directions {

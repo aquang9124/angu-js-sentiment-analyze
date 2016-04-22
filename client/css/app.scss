@@ -1,9 +1,9 @@
 // Variables
 $navbar-color: darken(black, 10%);
 $navbar-bg: lighten(black, 20%);
+$body-bg: lighten(black, 15%);
 $navlink-color: #4CAF50;
 $navlink-border: darken(#4CAF50, 20%);
-$body-bg: darken(gray, 10%);
 $x-large: 40em;
 $large: 30em;
 $medium: 20em;
@@ -54,9 +54,7 @@ html, body {
 }
 
 body {
-	padding-top: 100px;
-	background: url('../img/coffee.jpg') center center no-repeat fixed;
-	@include bg-cover();
+	padding-top: 3.925em;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -104,11 +102,8 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 
-.container {
-	@include container-perim();
-	background-color: white;
-	opacity: 0.8;
-	filter: alpha(opacity=80); /* For IE8 and earlier */
+.container-fluid {
+	background-color: $body-bg;
 	height: 100%;
 }
 
@@ -122,22 +117,20 @@ h1, h2, h3, h4, h5, h6 {
 	height: $large;
 }
 
-.angular-google-map-container {
-    height: 300px;
+.view-box {
+	height: 100%;
+	width: 100%;
 }
-
-.angular-google-map {
-    height: 300px;
-}
-
+ 
 // IDs
 #navi-bar {
-	border: 2px solid $navbar-color;
+	border-top: 2px solid $navbar-color;
+	border-bottom: 2px solid $navbar-color;
+	background-color: $navbar-bg;
 	top: 0;
 	left: 0;
 	right: 0;
 	z-index: 9999;
-	background-image: url('http://api.thumbr.it/whitenoise-361x370.png?background=1f1b1fff&noise=626262&density=64&opacity=15');
 	width: 100% !important;
 	height: 4em;
 	padding: 0 4em 0 4em;
@@ -169,8 +162,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #map_canvas {
-	height: $x-large;
-	margin-top: $x-small;
+	min-height: 200px;
+	min-width: 200px;
+	height: 100%;
+	width: 100%;
+	margin: 0 auto;
 }
 
 // Media Queries
