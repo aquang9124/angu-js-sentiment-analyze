@@ -32,7 +32,7 @@ myApp.directive('anguMaps', function() {
 			}
 		},
 		scope: {
-			
+
 		}
 	}
-})
+});

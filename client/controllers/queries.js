@@ -1,7 +1,7 @@
 myApp.controller('queriesController', function($scope, $location, $document, $interval, locationService, mashApi) {
 	locationService.currentUrl = $location.url();
 
-	$scope.heading = { message: "Sentiment Analysis", num: 1 };
+	$scope.heading = { message: "Check Crime", num: 1 };
 	$scope.sentence = mashApi.sentence;
 
 	$scope.$watch('sentence', function() {
@@ -9,7 +9,7 @@ myApp.controller('queriesController', function($scope, $location, $document, $in
 	});
 
 	// Code for the instructions to show
-	$scope.directions = ["Please type in a sentence.", "After analysis, you will receive your sentiment results.", "You will be able to see how negative/positive your statement is.", "Give it a try. :)"];
+	$scope.directions = ["Please type in a location.", "After analysis, you will be shown that location.", "Give it a try. :)"];
 	$scope.wordCount = 0;
 	$scope.characterCount = 0;
 	$scope.instructions = '';
@@ -35,12 +35,12 @@ myApp.controller('queriesController', function($scope, $location, $document, $in
 		if ($scope.heading.num == 1)
 		{
 			$scope.heading.num = 2;
-			$scope.heading.message = "So people don't think you're a dick";
+			$scope.heading.message = "For Personal Safety";
 		}
 		else
 		{
 			$scope.heading.num = 1;
-			$scope.heading.message = "Sentiment Analysis";
+			$scope.heading.message = "Check Crime";
 		}
 	};
 
