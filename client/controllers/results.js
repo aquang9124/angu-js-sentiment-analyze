@@ -3,10 +3,8 @@ myApp.controller('resultsController', function($scope, $location, locationServic
 
 	$scope.sentence = mashApi.sentence;
 	$scope.results = [];
-
 	mashApi.find($scope.sentence, function(data) {
 		$scope.results = data.body.keywords;
 	});
-	
 
 });
