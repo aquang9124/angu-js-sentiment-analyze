@@ -2,13 +2,15 @@ myApp.directive('anguMaps', function() {
 	return function(scope, elem) {
 		var mapOptions = {
 			center: new google.maps.LatLng(-34.397, 150.644),
-			zoom: 10,
-			mapTypeId: google.maps.MapTypeId.ROADMAP,
+			zoom: 16,
+			draggable: true,
+			mapTypeId: google.maps.MapTypeId.ROADMAP
 		};
 
 		var map = new google.maps.Map(elem[0], mapOptions);
 		var options = {
-			enableHighAccuracy: true
+			enableHighAccuracy: true,
+			timeout: 5000
 		};
 
 		if (navigator.geolocation) {
@@ -18,6 +20,11 @@ myApp.directive('anguMaps', function() {
 					lng: pos.coords.longitude
 				};
 				map.setCenter(position);
+				var marker = new google.maps.Marker({
+					position: position,
+					map: map,
+					title: 'Hello World!'
+				});
 			}, function(err) {
 				alert('Unable to get location: ' + err.message);
 			}, options);
