@@ -1,11 +1,11 @@
-myApp.controller('queriesController', function($scope, $location, $document, $interval, locationService, sentiService) {
+myApp.controller('queriesController', function($scope, $location, $document, $interval, locationService, mashApi) {
 	locationService.currentUrl = $location.url();
 
 	$scope.heading = { message: "Sentiment Analysis", num: 1 };
-	$scope.text = sentiService.text;
+	$scope.sentence = mashApi.sentence;
 
-	$scope.$watch('text', function() {
-		sentiService.text = $scope.text;
+	$scope.$watch('sentence', function() {
+		mashApi.sentence = $scope.sentence;
 	});
 
 	// Code for the instructions to show

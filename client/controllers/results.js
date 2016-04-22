@@ -1,7 +1,9 @@
-myApp.controller('resultsController', function($scope, $location, locationService, sentiService) {
+myApp.controller('resultsController', function($scope, $location, locationService, mashApi) {
 	locationService.currentUrl = $location.url();
 
-	$scope.text = sentiService.text;
+	$scope.sentence = mashApi.sentence;
 
-	$scope.results = sentiService.getAnalysis($scope.text);
+	$scope.results = mashApi.find($scope.sentence);
+	
+
 });

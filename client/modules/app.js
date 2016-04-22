@@ -20,21 +20,15 @@ myApp.service('locationService', function() {
 	this.currentUrl = '';
 });
 
-myApp.service('sentiService', function($resource) {
-	this.text = "Have a great day!";
-
-	this.getAnalysis = function(text) {
-		var sentimentAPI = $resource('https://twinword-sentiment-analysis.p.mashape.com/analyze/', {}, { 
-			find: { 
-				method: 'GET',
-				isArray: false,
-				headers: { 
-					"x-mashape-authorization": 'bDPDcJeR9BmshPk8xl2oUBZ4mM14p1xzufRjsnWu3DBQ4E9fq0',
-				}
-			}
+myApp.service('mashApi', function($http) {
+	this.sentence = "Have a great day!";
+	this.results = [];
+	this.find = function(sentence) {
+		$http.post('/api/sentiments', { sentence: sentence }).success(function(data) {
+			this.results = data;
+			console.log(data);
 		});
-		return analysisResult = sentimentAPI.find({ text: text });
-	}
+	};
 });
 
 // Index Controller
