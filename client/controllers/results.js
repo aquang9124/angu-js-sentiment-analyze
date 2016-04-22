@@ -2,8 +2,11 @@ myApp.controller('resultsController', function($scope, $location, locationServic
 	locationService.currentUrl = $location.url();
 
 	$scope.sentence = mashApi.sentence;
+	$scope.results = [];
 
-	$scope.results = mashApi.find($scope.sentence);
+	mashApi.find($scope.sentence, function(data) {
+		$scope.results = data.body.keywords;
+	});
 	
 
 });

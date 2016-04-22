@@ -1,6 +1,7 @@
 html, body {
   height: 100%;
-  width: 100%; }
+  width: 100%;
+  color: white; }
 
 body {
   padding-top: 3.925em; }
@@ -48,9 +49,9 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.3em; }
 
 .wrapper {
-  margin: 5em auto;
+  margin: 2em auto;
   width: 40em;
-  height: 30em; }
+  height: 15em; }
 
 .view-box {
   height: 100%;
@@ -109,6 +110,7 @@ h1, h2, h3, h4, h5, h6 {
     height: 10em; }
 
   .wrapper {
+    margin: 0 auto;
     width: 20em;
     height: 20em; } }
 

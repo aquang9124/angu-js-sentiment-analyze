@@ -1,7 +1,7 @@
 // Modules
-var myApp = angular.module('myApp', ['ngRoute', 'ngSanitize', 'uiGmapgoogle-maps']);
+var myApp = angular.module('myApp', ['ngRoute', 'ngSanitize']);
 	
-	myApp.config(function($routeProvider, uiGmapGoogleMapApiProvider) {
+	myApp.config(function($routeProvider) {
 		$routeProvider
 		.when('/', {
 			templateUrl: 'partials/queries.html',
@@ -19,11 +19,6 @@ var myApp = angular.module('myApp', ['ngRoute', 'ngSanitize', 'uiGmapgoogle-maps
 			redirectTo: '/'
 		});
 
-		uiGmapGoogleMapApiProvider.configure({
-			key: 'AIzaSyB99XQamcdZpKoSal7Jx5BX0zw96xVJEhM',
-			v: '3.22',
-			libraries: 'places,geometry,visualization'
-		});
 	});
 // Services
 myApp.service('locationService', function() {
@@ -31,12 +26,14 @@ myApp.service('locationService', function() {
 });
 
 myApp.service('mashApi', function($http) {
+	var self = this;
 	this.sentence = "Have a great day!";
 	this.results = [];
-	this.find = function(sentence) {
+	this.find = function(sentence, callback) {
 		$http.post('/api/sentiments', { sentence: sentence }).success(function(data) {
-			this.results = data;
-			console.log(data);
+			self.results = data
+			callback(data)
+			
 		});
 	};
 });
