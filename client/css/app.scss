@@ -122,6 +122,14 @@ h1, h2, h3, h4, h5, h6 {
 	height: $large;
 }
 
+.angular-google-map-container {
+    height: 300px;
+}
+
+.angular-google-map {
+    height: 300px;
+}
+
 // IDs
 #navi-bar {
 	border: 2px solid $navbar-color;
@@ -158,6 +166,10 @@ h1, h2, h3, h4, h5, h6 {
 #spc-heading {
 	@include black-gd-txt();
 	cursor: pointer;
+}
+
+#map_canvas {
+	height: 400px;
 }
 
 // Media Queries

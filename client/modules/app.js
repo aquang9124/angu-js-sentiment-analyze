@@ -1,7 +1,7 @@
 // Modules
-var myApp = angular.module('myApp', ['ngRoute', 'ngMessages', 'ngSanitize', 'ngResource']);
+var myApp = angular.module('myApp', ['ngRoute', 'ngSanitize', 'uiGmapgoogle-maps']);
 	
-	myApp.config(function($routeProvider) {
+	myApp.config(function($routeProvider, uiGmapGoogleMapApiProvider) {
 		$routeProvider
 		.when('/', {
 			templateUrl: 'partials/queries.html',
@@ -11,8 +11,18 @@ var myApp = angular.module('myApp', ['ngRoute', 'ngMessages', 'ngSanitize', 'ngR
 			templateUrl: 'partials/results.html',
 			controller: 'resultsController'
 		})
+		.when('/gmaps', {
+			templateUrl: 'partials/gmaps.html',
+			controller: 'mapsCtrl'
+		})
 		.otherwise({
 			redirectTo: '/'
+		});
+
+		uiGmapGoogleMapApiProvider.configure({
+			key: 'AIzaSyB99XQamcdZpKoSal7Jx5BX0zw96xVJEhM',
+			v: '3.22',
+			libraries: 'places,geometry,visualization'
 		});
 	});
 // Services
@@ -34,4 +44,4 @@ myApp.service('mashApi', function($http) {
 // Index Controller
 myApp.controller('routesController', function($scope, $location, locationService) {
 	$scope.urlPath = locationService;
-})
+});

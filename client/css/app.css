@@ -63,6 +63,12 @@ h1, h2, h3, h4, h5, h6 {
   width: 40em;
   height: 30em; }
 
+.angular-google-map-container {
+  height: 300px; }
+
+.angular-google-map {
+  height: 300px; }
+
 #navi-bar {
   border: 2px solid black;
   top: 0;
@@ -101,6 +107,9 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-text-fill-color: transparent;
   text-fill-color: transparent;
   cursor: pointer; }
+
+#map_canvas {
+  height: 400px; }
 
 @media only screen and (max-width: 550px) {
   #directions {
